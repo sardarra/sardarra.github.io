@@ -1,0 +1,40 @@
+header {
+    padding: 2px;
+    text-align: left;
+    background: #292929;
+    color: white;
+    font-size: 15px;
+    font-family:monospace;
+}
+
+body {
+    font-family:sans-serif;
+    margin:0%;
+}
+#list-nav-container {
+    color:black;
+    background-color:cornflowerblue;
+    margin: 0%;
+    padding: 0%;
+
+}
+
+#list-nav-container ul {
+    margin: 0%;
+    padding: 0%;
+    
+}
+
+.item-list {
+    margin: 0%;
+    padding: 5px;
+    list-style-type: none;
+    display: inline;
+    float: left;
+    display: block;
+    border-style: solid;
+    border-width: 1px;
+}
+#nav a {
+    display: block;
+}
