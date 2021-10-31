@@ -1,40 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@700&family=Comfortaa:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Comfortaa&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap');
+
 header {
-    padding: 2px;
+    padding: 1px;
     text-align: left;
-    background: #292929;
+    background: #000000;
     color: white;
-    font-size: 15px;
-    font-family:monospace;
+    font-size: 20px;
+    font-family: 'Comfortaa', cursive;
 }
 
 body {
-    font-family:sans-serif;
+    font-family: 'Comfortaa', cursive;
     margin:0%;
 }
 #list-nav-container {
     color:black;
-    background-color:cornflowerblue;
     margin: 0%;
     padding: 0%;
-
+    background-color: rgb(97, 201, 166);
 }
 
 #list-nav-container ul {
-    margin: 0%;
-    padding: 0%;
-    
+    margin: 0cm;
+    padding: 0cm;
 }
 
-.item-list {
-    margin: 0%;
+.content-block {
+    margin: .25%;
     padding: 5px;
+    display:inline-block;
+    border-style: solid;
+    border-width:3px;
+    border-radius: 3px;
+    width:98%;
+}
+#current-situation {
+    float: left;
+}
+#blog {
+    background-image: linear-gradient(rgb(243, 255, 241), rgb(100, 255, 216));
+
+}
+
+.blog-post {
+    background-color: white;
+}
+
+.blog-title {
+    font-family: 'Balsamiq Sans', cursive;
+}
+.blog-post {
+    border-style: solid;
+    border-width: 1px;
+    margin: 4px;
+    padding: 4px;
+    border-radius: 9px;
+}
+
+.blog-content {
+    font-family: Arial, Helvetica, sans-serif
+}
+.item-list {
+    background-color: aquamarine;
+    margin: 0%;
+    padding: 10px;
     list-style-type: none;
     display: inline;
     float: left;
     display: block;
     border-style: solid;
-    border-width: 1px;
+    border-width: 2px;
+    border-color: azure;
 }
 #nav a {
     display: block;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-family: 'Comfortaa', cursive;
+}
+
+#video-section {
+    float:left;
 }
