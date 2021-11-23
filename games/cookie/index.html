@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Cookie Entrepreneur Beta</title>
+</head>
+<body>
+    <style type="text/css">
+        body {
+            margin: 0%;
+            padding:0%;
+            font-family:sans-serif;
+        }
+        .block {
+            border-style: solid;
+            border-color: orange;
+            border-radius: 10px;
+            margin:10px;
+            padding:10px;
+            min-width: 20%;
+            width: 40% auto;
+            float:left;
+            height:400px auto;
+        }
+        #store ul {
+            width:auto;
+            display: table;
+        }
+        #store li {
+            height: auto;
+            align-items: center;
+            transition: 500ms all;
+            padding-top: 12px;
+            padding-bottom: 12px;
+        }
+        #store li:hover {
+            align-items: center;
+        }
+        #cookie {
+            align-items: center;
+        }
+        #store ul {
+            list-style-type: none;
+            padding: 0px;
+        }
+        #store li {
+            font-size: 20px;
+            padding: 0px;
+        }
+        #store button {
+            border-radius: 4px;
+            border-style: solid;
+            border-color: orange;
+            border-width: 2px;
+            margin: 10px;
+            padding: 10px;
+            min-width: 250px;
+        }
+        #cookieimage {
+            width: 65%;
+            transition: width 1s;
+        }
+        #cookieimage:hover {
+            width: 71%;
+            transition: width 1s;
+        }
+        header {
+            display:flex;
+            align-items: center;
+            background-color: orange;
+        }
+        header img {
+            min-width: 100px;
+            max-width: 500px;
+        }
+        #stuff {
+            align-items: center;
+        }
+        .block-contents {
+            align-items: center;
+        }
+        #inventory {
+            border-style: solid;
+            border-color: orange;
+            border-width: 3px;
+            border-radius: 3px;
+            padding: 4px;
+            font-size: 12px;
+        }
+    </style>
+    <script src="script.js"></script>
+    <!-- Coding Starts here -->
+    <header>
+        <img src="logo.png"> <p>by Sardar Rahman (Beta)</p>
+    </header>
+    <div id="stuff">
+        <div id="cookie" class="block">
+            <div class="block-contents">
+                <h1>Cookies</h1>
+                <img src="cookie.png" onclick="ClickCookie()" id="cookieimage">
+                <div id="inventory">
+                    <p>Cookies:  <span id="cookiecount"></span></p>
+                    <p>$: <span id="money"></span></p>
+                    <p>Grandmas Spoons:  <span id="grandmasSpoonsCount"></span></p>
+                    <p>Grandmas:  <span id="grandmasCountDisplay"></span></p>
+                    <p>Stores:  <span id="storecount"></span></p>
+                </div>
+                
+        </div>
+            
+        </div>
+        <div id="store" class="block">
+            <h1>Store:</h1>
+            <ul>
+                <li><button onclick="GranmasCookiesClick()" id="grandmasSoonsColoring">(50 Cookies)Grandmas Spoons:</button></li>
+                <li><button onclick="grandmaIsHired()" id="grandmaColoring">(500 Cookies)Hire Grandma:</button></li>
+                <li><button onclick="buyShop()" id="shopBuy">(2000 Cookies)Buy A Shop</button></li>
+            </ul>
+                
+                
+                
+            
+        </div>
+        <div id="shops" class="block">
+            <h1>Work</h1>
+            <p>Have your grandmas work</p>
+            <button onclick="work('grandmas')">Work one day</button>
+            <p>Sell all your cookies for 50c</p>
+            <button onclick="work('shop')">Sell all cookies</button>
+        </div>
+    </div>
+    
+</body>
+
+</html>
