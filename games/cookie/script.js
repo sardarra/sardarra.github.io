@@ -118,29 +118,31 @@ function work(mode) {
     // Grandmas Make Cookies
     if (mode == 'grandmas') {
         if (grandmasCount > 0) {
+            // Make grandma work
             deltaGrandmasWork = grandmasCount * 24;
             cookiecount += deltaGrandmasWork;
-            checkStore();
             grandmaTimesWorked += 1;
+            
+            if (grandmaTimesWorked == 23) {
+                alert('"Looks like my hand fell off from making cookies, I cant do it anymore. See ya around." - Grandma');
+                grandmasCount -= 1;
+                grandmaTimesWorked -= 23;
+            checkStore();
         }
-        else {
-            alert("You dont have any grandmas, you silly")
+        else if (grandmasCount == 0) {
+            alert("You dont have any grandmas, you silly");
         }
         
     }
     // Sell cookies
-    if (mode == 'shop') {
+    else if (mode == 'shop') {
         if (shops == 1) {
             moneyDelta = cookiecount / 2;
             money += moneyDelta;
             cookiecount = 0;
         }
     }
-    if (grandmaTimesWorked == 25) {
-        alert('"Looks like my hand fell off from making cookies, I cant do it anymore. See ya around." - Grandma');
-        grandmasCount -= 1;
-        grandmaTimesWorked -= 25;
-        checkStore();
+    
 }
     checkStore();
 }
