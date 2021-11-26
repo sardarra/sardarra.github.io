@@ -14,6 +14,10 @@ var cookieCounter = document.getElementById("cookiecount")
 var shopDisplayer = document.getElementById("storecount")
 // To control the amount of work that is done, lose grandmas after lots of work
 var grandmaTimesWorked = 0;
+
+var deltaGrandmasWork;
+var grandmaResigned = 0;
+var moneyDelta;
 // if you dont have enough money for something in a store
 function noMoneyEnough() {
     alert("Insufficient Balance")
@@ -86,9 +90,6 @@ function grandmaIsHired() {
         document.getElementById("grandmasCountDisplay").innerHTML = grandmasCount;
         checkStore();
     }
-    else {
-        noMoneyEnough();
-    }
     checkStore();
 }
 
@@ -111,38 +112,62 @@ function buyShop() {
     }
     checkStore();
 }
-var deltaGrandmasWork;
 
-var moneyDelta;
-function work(mode) {
-    // Grandmas Make Cookies
-    if (mode == 'grandmas') {
-        if (grandmasCount > 0) {
-            // Make grandma work
-            deltaGrandmasWork = grandmasCount * 24;
-            cookiecount += deltaGrandmasWork;
-            grandmaTimesWorked += 1;
-            
-            if (grandmaTimesWorked == 23) {
-                alert('"Looks like my hand fell off from making cookies, I cant do it anymore. See ya around." - Grandma');
-                grandmasCount -= 1;
-                grandmaTimesWorked -= 23;
-            checkStore();
-        }
-        else if (grandmasCount == 0) {
-            alert("You dont have any grandmas, you silly");
-        }
-        
+
+// to notify you about missing grandmas
+function grandmaResignMessage() {
+    if (timesGrandmaResigned < 5) {
+        alert('"Looks like my hand fell off from making cookies, I cant do it anymore. See ya around." - Grandma');
     }
-    // Sell cookies
-    else if (mode == 'shop') {
-        if (shops == 1) {
-            moneyDelta = cookiecount / 2;
-            money += moneyDelta;
-            cookiecount = 0;
-        }
+    else if (timesGrandmaResigned == 5) {
+        alert("By now you should have gotten the catch. After working alot, your grandmas will get tired and thus will stop working.");
     }
-    
+    else if (timesGrandmaResigned > 5) {
+        console.log("Lost one grandma");
+    }
 }
-    checkStore();
+
+function work() {
+    // Grandmas Make Cookies
+    if (grandmasCount > 0) {
+        // Make grandma work
+        deltaGrandmasWork = grandmasCount * 24;
+        cookiecount += deltaGrandmasWork;
+        grandmaTimesWorked += 1;
+        checkStore();
+        if (grandmaTimesWorked > 23) {
+            grandmasCount -= 1;
+            grandmaTimesWorked -= 23;
+            grandmaResigned += 1;
+            if (grandmaResigned < 5) {
+                alert('"Looks like my hand fell off from making cookies, I cant do it anymore. See ya around." - Grandma');
+                console.log("1");
+            }
+            else if (grandmaResigned == 5) {
+                alert("By now you should have gotten the catch. After working alot, your grandmas will get tired and thus will stop working.");
+                connsole.log("2")
+            }
+            else if (grandmaResigned > 5) {
+                console.log("Lost one grandma");
+            }
+        }
+    }
+    checkStore(); 
+}    
+     
+
+    
+
+
+// Sell your cookies
+function sellCookies() {
+    if (shops == 1) {
+        moneyDelta = cookiecount / 2;
+        money += moneyDelta;
+        cookiecount = 0;
+        checkStore();
+    }
+    else {
+        alert("You don't have a shop to sell your cookies at");
+    }
 }
