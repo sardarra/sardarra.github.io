@@ -3,6 +3,7 @@
 
 <head>
     <title>Cookie Entrepreneur Beta</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 </head>
 <body>
     <style type="text/css">
@@ -18,8 +19,8 @@
             border-radius: 10px;
             margin:10px;
             padding:10px;
-            min-width: 20%;
-            width: 40% auto;
+            max-width: 90%;
+            width: auto;
             float:left;
             height:400px auto;
         }
@@ -59,11 +60,11 @@
             background-color: white;
         }
         #cookieimage {
-            width: 65%;
+            width: 225px;
             transition: width 1s;
         }
         #cookieimage:hover {
-            width: 71%;
+            width: 265px;
             transition: width 1s;
         }
         header {
@@ -89,6 +90,12 @@
             padding: 4px;
             font-size: 12px;
         }
+        h1 {
+            font-size: 35px;
+        }
+        #inventory {
+            font-size: 18px;
+        }
     </style>
     <script src="script.js"></script>
     <!-- Coding Starts here -->
@@ -98,7 +105,10 @@
     <div id="stuff">
         <div id="cookie" class="block">
             <div class="block-contents">
-                <h1>Cookies</h1>
+                <div id="qa1">
+                    <h1>Cookies</h1>
+                </div>
+                
                 <img src="cookie.png" onclick="ClickCookie()" id="cookieimage">
                 <div id="inventory">
                     <p>Cookies:  <span id="cookiecount"></span></p>
@@ -126,9 +136,9 @@
         <div id="shops" class="block">
             <h1>Work</h1>
             <p>Have your grandmas work</p>
-            <button onclick="work('grandmas')">Work one day</button>
+            <button onclick="work()">Work one day</button>
             <p>Sell all your cookies for 50c</p>
-            <button onclick="work('shop')">Sell all cookies</button>
+            <button onclick="sellCookies()">Sell all cookies</button>
         </div>
     </div>
     
