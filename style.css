@@ -4,21 +4,39 @@
 header {
     padding: 1px;
     text-align: left;
-    background: #000000;
-    color: white;
+    background: #fcff33;
+    color: rgb(0, 0, 0);
     font-size: 20px;
     font-family: 'Comfortaa', cursive;
+}
+
+header a {
+    text-decoration: none;
+    color: black;
 }
 
 body {
     font-family: 'Comfortaa', cursive;
     margin:0%;
 }
+.item-list {
+    font-size: 24px;
+    transition: font-size .5s;
+}
+#nav {
+    margin: 0px;
+    padding: 0px;
+}
+
+.item-list:hover {
+    font-size: 35px;
+    transition: font-size .5s;
+}
 #list-nav-container {
     color:black;
     margin: 0%;
     padding: 0%;
-    background-color: rgb(97, 201, 166);
+    height: 0px;
 }
 
 #list-nav-container ul {
@@ -26,74 +44,9 @@ body {
     padding: 0cm;
 }
 
-.content-block {
-    margin: .25%;
-    padding: 5px;
-    display:block;
-    border-radius: 6px;
-    width:auto;
-    height: auto;
-    float: left;
-    align-items: center;
-    background-color: rgb(231, 231, 231);
-}
 
-#current-situation {
-    background-color: rgb(228, 228, 228);
-    padding:10px;
-}
-
-#current-situation-public {
-    padding:10px;
-    border-style: solid;
-    border-width: 1px;
-}
-#threedassetsinfo {
-    display:none;
-}
-
-.content-block:hover {
-    width:fill;
-}
-#current-situation:hover #current-situation-public {
-    float:left;
-    padding:10px;
-    border-style: solid;
-    border-width: 1px;
-}
-#current-situation:hover #threedassetsinfo {
-    display: block;
-    float:left;
-    padding:10px;
-    border-style: solid;
-    border-width: 1px;
-}
-
-#blog {
-    background-image: linear-gradient(rgb(243, 255, 241), rgb(100, 255, 216));
-
-}
-
-.blog-post {
-    background-color: white;
-}
-
-.blog-title {
-    font-family: 'Balsamiq Sans', cursive;
-}
-.blog-post {
-    border-style: solid;
-    border-width: 1px;
-    margin: 4px;
-    padding: 4px;
-    border-radius: 9px;
-}
-
-.blog-content {
-    font-family: Arial, Helvetica, sans-serif
-}
 .item-list {
-    background-color: aquamarine;
+    background-color: rgb(247, 255, 179);
     margin: 0%;
     padding: 10px;
     list-style-type: none;
@@ -104,13 +57,12 @@ body {
     border-width: 2px;
     border-color: azure;
 }
+.item-list:hover {
+    border-bottom-color: rgb(255, 166, 0);
+}
 #nav a {
     display: block;
     text-decoration: none;
     color: rgb(0, 0, 0);
     font-family: 'Comfortaa', cursive;
-}
-
-#video-section {
-    float:left;
 }
