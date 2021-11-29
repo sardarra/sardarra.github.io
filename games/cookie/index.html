@@ -49,11 +49,11 @@
             list-style-type: none;
             padding: 0px;
         }
-        #store li {
+        #store ul li {
             font-size: 20px;
             padding: 0px;
         }
-        #store button {
+        #store ul button {
             border-radius: 4px;
             border-style: solid;
             border-color: orange;
@@ -127,6 +127,8 @@
         </div>
         <div id="store" class="block">
             <h1>Store:</h1>
+            <button onclick="toggleBuy('hundred')" id="toggle100">Toggle Buy 100</button>
+            <button onclick="toggleBuy('one')" id="toggle1">Toggle Buy 1</button>
             <ul>
                 <li><button onclick="GranmasCookiesClick()" id="grandmasSpoonsColoring">(50 Cookies)Grandmas Spoons:</button></li>
                 <li><button onclick="grandmaIsHired()" id="grandmaColoring">(500 Cookies)Hire Grandma:</button></li>
