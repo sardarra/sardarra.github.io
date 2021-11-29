@@ -1,26 +1,40 @@
-var cookiecount = 0;
-var GrandmasSpoons = 0;
-var GrandmasSpoonsDelta = 1;
-var grandmasCount = 0;
+// Script for Cookie Entrepreneur
+// To Do:
+//  1) Make the docs
+//  2) Make use for the money, like houses and countries, or expeditions
+//  3) Add a grandpa, which will manage things
+//  4) Advertise
+//  5) add drawings/ make drawings/ icons
+//  6) Add links to the main website, sardarra.github.io
+//  7) 
+//  8) Convert site to a better framework, like vite, or react, et cetera.
+//
+//
+//
+//
+let cookiecount = 0;
+let GrandmasSpoons = 0;
+let GrandmasSpoonsDelta = 1;
+let grandmasCount = 0;
 var grandmasAreWorking = false;
 var grandmaCapper = 0;
 var shops = 0;
 var money = 0;
-// Initial Prices in Shop
-var spoonPrice = 50;
-var grandmaPrice = 500;
+let spoonPrice = 50;
+let grandmaPrice = 500;
 // html elements
-var cookieCounter = document.getElementById("cookiecount")
-var shopDisplayer = document.getElementById("storecount")
+var cookieCounter = document.getElementById("cookiecount");
+var shopDisplayer = document.getElementById("storecount");
 // To control the amount of work that is done, lose grandmas after lots of work
 var grandmaTimesWorked = 0;
 
 var deltaGrandmasWork;
 var grandmaResigned = 0;
 var moneyDelta;
+
 // if you dont have enough money for something in a store
 function noMoneyEnough() {
-    alert("Insufficient Balance")
+    alert("Insufficient Balance");
 }
 // Check if there are enough cookies for store
 function checkStore() {
@@ -52,7 +66,26 @@ function checkStore() {
         document.getElementById("shopBuy").style.backgroundColor = "white";
     }
 }
-checkStore();
+// toggles buying mode
+let massBuyMode = 1;
+function toggleBuy(mode) {
+    if (mode == 'one') {
+        if (massBuyMode != 1) {
+            massBuyMode = 1;
+        }
+        else {
+            console.log("Already at mode");
+        }
+    }
+    else if (mode == 'hundred') {
+        if (massBuyMode != 100) {
+            massBuyMode = 100;
+        }
+    }
+    spoonPrice = 50 * massBuyMode;
+    grandmaPrice = 500 * massBuyMode;
+    checkStore();
+}
 // the stuff when you click the cookie
 function ClickCookie() {
     cookiecount = cookiecount + 1;
@@ -62,13 +95,25 @@ function ClickCookie() {
     }
     document.getElementById("cookiecount").innerHTML = cookiecount;
     checkStore();
-// When you buy a spoon
 }
-function GranmasCookiesClick() {
-    if (cookiecount > 49) {
-        GrandmasSpoons = GrandmasSpoons + 1;
+
+
+
+//===========================================================================================
+//===========================================================================================
+//===========================================================================================
+//=========================================Store=============================================
+//===========================================================================================
+//===========================================================================================
+//===========================================================================================
+
+// Spoon
+function GranmasCookiesClick() {   
+    spoonPrice = 50 * massBuyMode;
+    if (cookiecount >= spoonPrice) {
+        GrandmasSpoons = GrandmasSpoons + massBuyMode;
         GrandmasSpoonsDelta = GrandmasSpoonsDelta + .3;
-        cookiecount = cookiecount - 50;
+        cookiecount = cookiecount - spoonPrice;
         document.getElementById("cookiecount").innerHTML = cookiecount;
         document.getElementById("grandmasSpoonsCount").innerHTML = GrandmasSpoons;
     }
@@ -77,15 +122,12 @@ function GranmasCookiesClick() {
     }
     checkStore();
 }
-function sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
-}
 
 // When you hire a grandma to work
 function grandmaIsHired() {
-    if (cookiecount > 499) {
-        grandmasCount = grandmasCount + 1;
-        cookiecount = cookiecount - 500;
+    if (cookiecount >= grandmaPrice) {
+        grandmasCount = grandmasCount + massBuyMode;
+        cookiecount = cookiecount - grandmaPrice;
         document.getElementById("cookiecount").innerHTML = cookiecount;
         document.getElementById("grandmasCountDisplay").innerHTML = grandmasCount;
         checkStore();
@@ -113,7 +155,9 @@ function buyShop() {
     checkStore();
 }
 
-
+//==============================================================================
+//Grandmas
+//==============================================================================
 // to notify you about missing grandmas
 function grandmaResignMessage() {
     if (timesGrandmaResigned < 5) {
