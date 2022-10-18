@@ -1,0 +1,33 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+#header {
+    display: flex;
+}
+
+#header h4 {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+/* Add a black background color to the top navigation */
+#toolbar {
+    background-color: #333;
+    display: flex;
+    padding: 19px;
+}  
+  /* Style the links inside the navigation bar */
+#toolbar li {
+    margin-right: 10px;
+    color: "white";
+    list-style: none;
+    background-color: white;
+    padding: 10px;
+}
+
+#toolbar a  {
+    color: "white";
+    list-style: none;
+}
