@@ -3,12 +3,13 @@ body {
     padding: 0;
     font-family: sans-serif;
     overflow-x: hidden;
+    overflow-y: hidden;
 }
 
 #header {
     display: flex;
     padding-left: 19px;
-    width: 100vw
+    width: 100vw;
 }
 
 
@@ -20,17 +21,61 @@ body {
 /* Add a black background color to the top navigation */
 #toolbar {
     background-color: #333;
-    display: flex;
     padding: 19px;
+    width: 15vw;
+    height: 100vh;
+    margin-top: 2.5vh;
 }  
   /* Style the links inside the navigation bar */
 #toolbar li {
-    margin-right: 10px;
+    margin-bottom: 10px;
     color: "white";
     list-style: none;
     background-color: white;
     padding: 10px;
-    width: 24vw;
+    width: 13vw;
+}
+
+
+#toolbar a:link {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+  }
+  
+  a:visited {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+  }
+  
+  a:hover {
+    text-decoration: underline;
+    color: rgb(0, 0, 0);
+  }
+  
+  a:active {
+    text-decoration: underline;
+    color: rgb(0, 0, 0);
+  }
+
+#ionic-compounds {
+    display: none;
+}
+#ionic-compounds-selector:hover #ionic-compounds {
+    display: block;
+}
+
+iframe {
+  float: left;
+  position: absolute;
+  margin-left: 17.8vw;
+  margin-top: 2.5vh;
+}
+
+#nav {
+  position: absolute;
+}
+#bottom { 
+  display: flex;
 }
 
 
